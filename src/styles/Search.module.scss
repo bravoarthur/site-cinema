@@ -1,0 +1,24 @@
+.main {
+  padding: 2rem;
+}
+
+.filters {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  div {
+    flex: 1;
+  }
+
+  label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}

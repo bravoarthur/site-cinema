@@ -1,0 +1,19 @@
+.card {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

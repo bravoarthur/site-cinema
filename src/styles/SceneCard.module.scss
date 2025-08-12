@@ -1,0 +1,20 @@
+.card {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.image {
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
