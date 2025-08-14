@@ -1,8 +1,10 @@
 .card {
-  background: #2a2a2a;
+  
+  background: #2c2c34;
   border-radius: 8px;
   padding: 1rem;
   transition: transform 0.3s;
+  height: 100%;
 
   &:hover {
     transform: scale(1.02);
@@ -15,5 +17,6 @@
 
   p {
     font-size: 1rem;
+    color: #80808a
   }
 }

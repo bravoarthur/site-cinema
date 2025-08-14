@@ -8,7 +8,7 @@ interface CategoryCardProps {
 
 export default function CategoryCard({ category }: CategoryCardProps) {
   return (
-    <Link href={`/search?category=${category.title}`}>
+    <Link href={`/search?query=${category.title}`}>
       <div className={styles.card}>
         <h3>{category.title}</h3>
         <p>{category.description}</p>

@@ -8,7 +8,7 @@
   transition: transform 0.3s;
   margin-right: auto;
   margin-left: auto;
-  width: 500px;
+  width: 600px;
   ;
     
   &:hover {
@@ -25,28 +25,29 @@
     }
     
     .quote{
-      font-size: 1.25rem;
+      font-size: 1.50rem;
       color: #a0a0a8;
       margin: 0.5rem 0;
       display: flex;
       align-items: center;
-      gap: 0.5rem;    
+      gap: 1rem;    
       width: fit-content;
       text-wrap: 'wrap';
     }
     p {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     .quoteIcon{
         flex-shrink: 0;
         align-self: flex-start;
         margin-top: -0.6rem;
+        
     }
 
     .author {
         align-self: end;
         color: #666;  
-        font-size: 1.1rem; 
+        font-size: 1.2rem; 
         margin-bottom: 1.5rem;  
         margin-right: 1.2rem;   
     }
