@@ -28,6 +28,9 @@ export default function Admin() {
     review_image_1: '',
     review_image_2: '',
     site_rating: 0,
+    year: undefined,
+    duration: undefined,
+    imdb_rating: undefined,
   });
   const [formDataQuote, setFormDataQuote] = useState<Partial<Quote>>({
     movie_id: '',
@@ -110,6 +113,9 @@ export default function Admin() {
         review_image_1: '',
         review_image_2: '',
         site_rating: 0,
+        year: undefined,
+        duration: undefined,
+        imdb_rating: undefined,
       });
     } else {
       alert('Erro ao adicionar filme: ' + error.message);
@@ -206,6 +212,40 @@ export default function Admin() {
               value={formDataMovie.categories?.join(',')}
               onChange={(e) => setFormDataMovie({ ...formDataMovie, categories: e.target.value.split(',').map(s => s.trim()) })}
               required
+            />
+          </div>
+          <div>
+            <label>
+                Ano de Lancamento
+            </label>
+            <input
+              type="number"
+              value={formDataMovie.year || ''}
+              onChange={(e) => setFormDataMovie({ ...formDataMovie, year: parseInt(e.target.value) })}
+              placeholder="Ano de lançamento"
+            />
+          </div>
+          <div>
+            <label>
+                Duracao
+            </label>
+            <input
+              type="number"
+              value={formDataMovie.duration || ''}
+              onChange={(e) => setFormDataMovie({ ...formDataMovie, duration: parseInt(e.target.value) })}
+              placeholder="Duração (minutos)"
+            />
+          </div>
+          <div>
+            <label>
+                Nota no IMDB
+            </label>
+            <input
+              type="number"
+              step="0.1"
+              value={formDataMovie.imdb_rating || ''}
+              onChange={(e) => setFormDataMovie({ ...formDataMovie, imdb_rating: parseFloat(e.target.value) })}
+              placeholder="Nota IMDb"
             />
           </div>
           <div>

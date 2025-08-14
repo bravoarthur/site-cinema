@@ -1,6 +1,6 @@
 
 import { supabase } from '../../../lib/supabase';
-import MovieCardLarge from '../../../components/MovieCardLarge';
+import MovieCardReview from '@/components/MovieCardReview';
 import QuoteCard from '../../../components/QuoteCard';
 import SceneCard from '../../../components/SceneCard';
 import CommentSection from '../../../components/CommentSection';
@@ -58,44 +58,41 @@ export default async function MoviePage({ params }: MoviePageProps) {
 
   return (
     <main className={styles.main}>
-      <h1>{movie.title}</h1>
-      <p>{movie.review_subtitle}</p>
-      <MovieCardLarge movie={movie} />
-      <div className={styles.info}>
-        <p>Nota do Site: {movie.site_rating}/10</p>
-        <p>Nota do Público: {movie.user_rating || 'N/A'}/10</p>
-        <p>Categorias: {movie.categories.join(', ')}</p>
-        <p>Diretor(es): {movie.directors.join(', ')}</p>
-        <p>Atores: {movie.actors.join(', ')}</p>
-      </div>
-
-      <section>
+      <h1>Critica: {movie.review_title}</h1>
+      
+      <MovieCardReview movie={movie} />
+     
+      <section className={styles.criticaBox}>
         <h2>Por que Assistir</h2>
         <p>{movie.why_watch}</p>
       </section>
 
-      <section>
+      <section className={styles.criticaBox}>
         <h2>Crítica</h2>
         <p>{movie.review_text_beginning}</p>
-        <Image
-          src={movie.review_image_1}
-          alt="Review Image 1"
-          width={600}
-          height={400}
-          className={styles.movieImage}
-        />
+        <div className={styles.movieImageBox}>
+            <Image
+            src={movie.review_image_1}
+            alt="Review Image 1"
+            width={250}
+            height={350}
+            className={styles.movieImage}
+            />
+        </div>
         <p>{movie.review_text_middle}</p>
-        <Image
-          src={movie.review_image_2}
-          alt="Review Image 2"
-          width={600}
-          height={400}
-          className={styles.movieImage}
-        />
+        <div className={styles.movieImageBox}>
+            <Image
+            src={movie.review_image_2}
+            alt="Review Image 2"
+            width={250}
+            height={350}
+            className={styles.movieImage}
+            />
+        </div>
         <p>{movie.review_text_end}</p>
       </section>
 
-      <section>
+      <section className={styles.quotesScenesBox}>
         <h2>Frases Icônicas</h2>
         <div className={styles.cards}>
           {quotes && quotes.length > 0 ? (
@@ -108,7 +105,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
         </div>
       </section>
 
-      <section>
+      <section className={styles.quotesScenesBox}>
         <h2>Cenas Icônicas</h2>
         <div className={styles.cards}>
           {scenes && scenes.length > 0 ? (
@@ -119,9 +116,13 @@ export default async function MoviePage({ params }: MoviePageProps) {
             <p>Nenhuma cena icônica encontrada.</p>
           )}
         </div>
+
       </section>
 
-      <CommentSection movieId={movie.id} />
+      <section className={styles.commentsBox}>
+        <CommentSection movieId={movie.id} />
+      </section>
+
     </main>
   );
 }

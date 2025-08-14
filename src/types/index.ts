@@ -18,6 +18,9 @@ export interface Movie {
   site_rating: number;
   user_rating?: number;
   view_count: number;
+  year: number;           
+  duration: number;       
+  imdb_rating: number;  
 }
 
 export interface Category {
@@ -64,5 +67,13 @@ export interface Comment {
   movie_id?: string;
   article_id?: string;
   content: string;
+  created_at: string;
+  author_name: string;
+}
+
+export interface UserRating {
+  id: string;
+  movie_id: string;
+  rating: number;
   created_at: string;
 }

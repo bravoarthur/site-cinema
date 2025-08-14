@@ -33,8 +33,8 @@ export default function Header() {
           <Image
             src="/images/logo.png"
             alt="Cinema Logo"
-            width={120}
-            height={40}
+            width={320}
+            height={120}
             className={styles.logo}
             priority
           />
@@ -49,8 +49,8 @@ export default function Header() {
             <Image
               src="/images/search-icon.png"
               alt="Buscar"
-              width={24}
-              height={24}
+              width={84}
+              height={34}
               className={styles.searchIcon}
             />
           </Link>

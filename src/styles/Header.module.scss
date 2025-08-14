@@ -1,6 +1,6 @@
 .header {
   background: #000;
-  padding: 1rem 0;
+  padding: 1.2rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -10,10 +10,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+  padding-right: 70px;
 }
 
 .logo {
-  width: 120px;
+  width: 250px;
+  margin-left: 8rem;
 }
 
 .nav {
@@ -24,15 +27,17 @@
     color: #fff;
     font-size: 1.1rem;
     transition: color 0.3s;
+    margin: auto 0;
 
     &:hover {
-      color: #e50914;
+      color: #8b8585;
     }
   }
 }
 
 .searchIcon {
   width: 24px;
+  
 }
 
 .hamburger {
