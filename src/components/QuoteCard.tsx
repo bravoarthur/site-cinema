@@ -10,7 +10,7 @@ interface QuoteCardProps {
 
 export default function QuoteCard({ quote }: QuoteCardProps) {
   return (
-    <Link href={`/movies/${quote.movie_id}`}>
+    <Link className={styles.linkBox} href={`/movies/${quote.movie_id}`}>
       <div className={styles.card}>
         <div className={styles.quoteBox}>
             <section className={styles.quote}>

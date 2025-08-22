@@ -1,4 +1,3 @@
-
 .card {
   display: flex;
   flex-direction: row;
@@ -6,10 +5,11 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
-  width: 100%; /* Ocupa 80% da tela */
-  margin: 1rem auto; /* Centraliza com margem para evitar cortes no hover */
+  width: 100%;
+  max-width: 1400px; /* Limita a largura máxima para telas grandes */
+  margin: 1rem 0;
   padding: 1rem;
-  height: 480px; /* Altura fixa */
+  height: 480px;
 
   &:hover {
     transform: scale(1.02);
@@ -19,7 +19,7 @@
 }
 
 .mainContent {
-  flex: 1; /* Ocupa 50% do cartão */
+  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,11 +27,14 @@
 }
 
 .imageContainer {
-  flex: 0 0 auto; /* Imagem à esquerda */
+  flex: 0 0 auto;
+  .link{
+    display: flex;
+  }
 }
 
 .textContainer {
-  flex: 1; /* Texto à direita da imagem */
+  flex: 1;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -84,12 +87,14 @@
 }
 
 .quotesContainer {
-  flex: 1; /* Ocupa 50% do cartão */
+  flex: 1;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 40%; /* Garante que não ultrapasse metade do cartão */
+  margin-left: 1.5rem;
 }
 
 .quotesTitle {
@@ -102,40 +107,310 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
+  text-align: justify;
 }
 
 .quoteBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  width: fit-content; 
+
+
+  .author {
+    align-self: end;
+    color: #666;
+    font-size: 1.2rem;
+    margin-right: 0.8rem;
+  }
+
+  .quote {
+    font-size: 1.25rem;
+    color: #a0a0a8;
+    margin: 0.5rem 0;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 1.5rem;
-    width: max-content;
-
-    .author {
-        align-self: end;
-        color: #666;  
-        font-size: 1.2rem;  
-        margin-right: 0.8rem;    
-    }
-
-    .quote {
-      font-size: 1.25rem;
-      color: #a0a0a8;
-      margin: 0.5rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;      
-    }
-
+    align-items: center;
+    gap: 1.2rem;
+    word-break: break-word; /* Garante que o texto quebre adequadamente */
+  }
 }
-
 
 .quoteIcon {
   flex-shrink: 0;
- 
+  align-self: flex-start;
+  margin-top: -12px;
 }
 
 .noQuotes {
   font-size: 1rem;
   color: #666;
   margin: 0.5rem 0;
+}
+
+/* Breakpoint para telas menores que 1600px */
+@media (max-width: 1600px) {
+  .card {
+    max-width: 1200px;
+    height: auto; /* Altura ajustável para evitar cortes */
+    padding: 0.8rem;
+  }
+
+  .image {
+    width: 250px;
+    height: 375px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 1.2rem;
+  }
+
+  .rating {
+    font-size: 1.3rem;
+  }
+
+  .quotesContainer {
+    max-width: 40%
+  }
+
+  .quotesTitle {
+    font-size: 1.5rem;
+  }
+
+  .quoteIcon {
+    width: 25px;
+    height: 25px;
+    align-self: flex-start;
+  }
+
+  .quoteBox {
+    .quote {
+      font-size: 1.1rem;
+      word-break: break-word; /* Mantém quebras de texto */
+    }
+
+    .author {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Breakpoint para telas menores que 1300px */
+@media (max-width: 1300px) {
+  .card {
+    flex-direction: row; /* Mantém layout horizontal */
+    max-width: 1100px;
+    padding: 0.8rem;
+    height: auto;
+  }
+
+  .mainContent {
+    flex-direction: row; /* Mantém imagem e texto lado a lado */
+    align-items: center;
+    width: 100%;
+  }
+
+  .image {
+    width: 180px;
+    height: 300px;
+    margin-right: 0.8rem;
+  }
+
+  .textContainer {
+    text-align: left;
+    padding: 0.7rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 1rem;
+  }
+
+  .rating {
+    font-size: 1rem;
+  }
+
+  .quoteBox {
+    .quote {
+      font-size: 0.9rem;
+      word-break: break-word; /* Mantém quebras de texto */
+    }
+
+    .author {
+      font-size: 0.7rem;
+    }
+  }
+  .quotesTitle {
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  color: #a0a0a8;
+  }
+}
+
+/* Breakpoint para telas menores que 1024px */
+@media (max-width: 1024px) {
+  .card {
+    flex-direction: row; /* Mantém layout horizontal */
+    max-width: 800px;
+    padding: 0.8rem;
+    height: auto;
+  }
+
+  .mainContent {
+    flex-direction: row; /* Mantém imagem e texto lado a lado */
+    align-items: center;
+    width: 100%;
+  }
+
+  .image {
+    width: 200px;
+    height: 300px;
+    margin-right: 0.8rem;
+  }
+
+  .textContainer {
+    text-align: left;
+    padding: 0.7rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 1.1rem;
+  }
+
+  .rating {
+    font-size: 1.2rem;
+  }
+
+  .quotesContainer {
+    display: none; /* Esconde a seção de citações */
+  }
+}
+
+
+/* Breakpoint para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: row;
+    max-width: 600px;
+    padding: 0.6rem;
+    height: auto;
+  }
+
+  .mainContent {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image {
+    width: 150px;
+    height: 255px;
+    margin-right: 0.6rem;
+  }
+
+  .textContainer {
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 1rem;
+  }
+
+  .rating {
+    font-size: 1rem;
+  }
+
+  .quotesContainer {
+    display: none; /* Continua escondido */
+  }
+}
+
+/* Breakpoint para telas menores que 480px (móveis pequenos) */
+@media (max-width: 480px) {
+  .card {
+    flex-direction: row;
+    max-width: 100%; /* Ocupa toda a largura disponível */
+    padding: 0.6rem; //0.5rem
+    height: auto;
+  }
+
+  .mainContent {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image {
+    width: 140px;
+    height: 245px;
+    margin-right: 0.5rem;
+   
+  }
+
+  .textContainer {
+    text-align: left;
+    padding: 0.4rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 0.9rem;
+  }
+
+  .rating {
+    font-size: 0.9rem;
+  }
+
+  .quotesContainer {
+    display: none; /* Continua escondido */
+  }
 }

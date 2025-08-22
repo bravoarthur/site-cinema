@@ -38,3 +38,128 @@
   font-size: 0.9rem;
   color: #ffe066; /* marrom mais claro */
 }
+
+
+/* Breakpoint para telas menores que 1600px */
+@media (max-width: 1600px) {
+  .card {
+    padding: 0.4rem;
+    height: 360px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .image {
+    height: 260px;
+  }
+}
+
+/* Breakpoint para telas menores que 1300px */
+@media (max-width: 1300px) {
+  .card {
+    padding: 0.7rem;
+    height: 420px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .image {
+    height: 320px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    padding: 0.7rem;
+    height: 400px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .image {
+    height: 280px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    padding: 0.7rem;
+    height: 400px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .image {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+/* Breakpoint para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+  .card {
+    padding: 0.5rem;
+    height: 320px;
+    max-width: 270px;
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
+
+  .description {
+    font-size: 0.75rem;
+  }
+
+  .image {
+    height: 250px;
+    width: 100%;
+  }
+}
+
+/* Breakpoint para telas menores que 480px (móveis pequenos) */
+@media (max-width: 480px) {
+  .card {
+    padding: 0.5rem;
+    height: 260px;
+  }
+
+  .title {
+    font-size: 0.6rem;
+  }
+
+  .description {
+    font-size: 0.4rem;
+  }
+
+  .image {
+    height:195px;
+    margin-bottom: 0.1rem;
+  }
+}

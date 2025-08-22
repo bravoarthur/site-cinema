@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { supabase } from '../../lib/supabase';
 import { Movie } from '../../types';
 import styles from '../../styles/Movies.module.scss';
-import MovieCardSmall from '../../components/MovieCardSmall';
+import MovieCardLarge from '@/components/MovieCardLarge';
 
 export default function Movies() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -96,7 +96,7 @@ export default function Movies() {
           <p>Nenhum filme encontrado.</p>
         ) : (
           movies.map((movie) => (
-            <MovieCardSmall key={movie.id} movie={movie} />
+            <MovieCardLarge key={movie.id} movie={movie} />
           ))
         )}
       </div>

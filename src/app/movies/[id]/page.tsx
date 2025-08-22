@@ -58,18 +58,18 @@ export default async function MoviePage({ params }: MoviePageProps) {
 
   return (
     <main className={styles.main}>
-      <h1>Critica: {movie.review_title}</h1>
+      <h1 className={styles.criticaTitle}>Critica: {movie.review_title}</h1>
       
       <MovieCardReview movie={movie} />
      
       <section className={styles.criticaBox}>
         <h2>Por que Assistir</h2>
-        <p>{movie.why_watch}</p>
+        <p className={styles.criticaText}>{movie.why_watch}</p>
       </section>
 
       <section className={styles.criticaBox}>
         <h2>Crítica</h2>
-        <p>{movie.review_text_beginning}</p>
+        <p className={styles.criticaText}>{movie.review_text_beginning}</p>
         <div className={styles.movieImageBox}>
             <Image
             src={movie.review_image_1}
@@ -79,7 +79,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
             className={styles.movieImage}
             />
         </div>
-        <p>{movie.review_text_middle}</p>
+        <p className={styles.criticaText}>{movie.review_text_middle}</p>
         <div className={styles.movieImageBox}>
             <Image
             src={movie.review_image_2}
@@ -89,7 +89,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
             className={styles.movieImage}
             />
         </div>
-        <p>{movie.review_text_end}</p>
+        <p className={styles.criticaText}>{movie.review_text_end}</p>
       </section>
 
       <section className={styles.quotesScenesBox}>
@@ -100,7 +100,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
               <QuoteCard key={quote.id} quote={{ ...quote, movie_title: movie.title }} />
             ))
           ) : (
-            <p>Nenhuma frase icônica encontrada.</p>
+            <p className={styles.criticaText}>Nenhuma frase icônica encontrada.</p>
           )}
         </div>
       </section>
@@ -113,7 +113,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
               <SceneCard key={scene.id} scene={{ ...scene, movie_title: movie.title }} />
             ))
           ) : (
-            <p>Nenhuma cena icônica encontrada.</p>
+            <p className={styles.criticaText}>Nenhuma cena icônica encontrada.</p>
           )}
         </div>
 

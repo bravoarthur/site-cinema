@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: row;
   background: #2c2c34;
-  border-radius: 8px; 
+  border-radius: 8px;
   margin-top: 1rem;
   margin-bottom: 2.5rem;
   padding: 1rem;
@@ -71,29 +71,253 @@
 .link {
   color: #0173e5;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
 }
 
 .moreInfoBox {
-
   margin-left: 4rem;
 
-  .moreInfoContent{
+  .moreInfoContent {
     margin-top: 8rem;
     margin-right: 5rem;
 
-    .moreInfoTitle{
+    .moreInfoTitle {
       color: #80808a;
       margin-bottom: 1.6rem;
     }
 
-    .moreInfoText{
-      color: #a2a2a7
+    .moreInfoText {
+      color: #a2a2a7;
     }
-
   }
-
 }
 
+/* Breakpoint para telas menores que 1600px */
+@media (max-width: 1600px) {
+  .card {
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+    height: 300px;
+  }
+
+  .image {
+    width: 180px;
+    height: 300px;
+  }
+
+  .textContainer {
+    padding: 0.8rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin: 0.4rem 0;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin: 0.4rem 0;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 1.2rem;
+    margin: 0.4rem 0;
+  }
+
+  .rating {
+    font-size: 1.3rem;
+    margin: 0.4rem 0;
+  }
+
+  .moreInfoBox {
+    margin-left: 3rem;
+
+    .moreInfoContent {
+      margin-top: 6rem;
+      margin-right: 4rem;
+
+      .moreInfoTitle {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+}
+
+/* Breakpoint para telas menores que 1300px */
+@media (max-width: 1300px) {
+  .card {
+    padding: 0.7rem;
+    margin-bottom: 1.5rem;
+    height: 250px;
+  }
+
+  .image {
+    width: 150px;
+    height: 250px;
+  }
+
+  .textContainer {
+    padding: 0.7rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin: 0.3rem 0;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    margin: 0.3rem 0;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+  }
+
+  .rating {
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+  }
+
+  .moreInfoBox {
+    margin-left: 2rem;
+
+    .moreInfoContent {
+      margin-top: 5rem;
+      margin-right: 3rem;
+
+      .moreInfoTitle {
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+}
+
+/* Breakpoint para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Muda para layout vertical */
+    padding: 0.6rem;
+    margin-bottom: 1.2rem;
+    height: auto; /* Altura automática para acomodar o layout vertical */
+    width: 100%; /* Ocupa toda a largura disponível */
+  }
+
+  .mainContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image {
+    width: 120px;
+    height: 200px;
+  }
+
+  .textContainer {
+    padding: 0.6rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin: 0.3rem 0;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+  }
+
+  .rating {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+  }
+
+  .moreInfoBox {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .moreInfoContent {
+      margin-top: 1rem;
+      margin-right: 0;
+      text-align: center;
+
+      .moreInfoTitle {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+/* Breakpoint para telas menores que 480px (móveis pequenos) */
+@media (max-width: 480px) {
+  .card {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .image {
+    width: 100px;
+    height: 150px;
+  }
+
+  .textContainer {
+    padding: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+  }
+
+  .directors,
+  .actors,
+  .categories {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+  }
+
+  .rating {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+  }
+
+  .moreInfoBox {
+    .moreInfoContent {
+      margin-top: 0.8rem;
+
+      .moreInfoTitle {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+}

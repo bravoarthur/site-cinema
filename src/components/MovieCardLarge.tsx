@@ -35,7 +35,7 @@ export default function MovieCardLarge({ movie }: MovieCardLargeProps) {
     <div className={styles.card}>
       <div className={styles.mainContent}>
         <div className={styles.imageContainer}>
-          <Link href={`/movies/${movie.id}`} >
+          <Link className={styles.link} href={`/movies/${movie.id}`} >
             <Image
                 src={movie.image_url}
                 alt={movie.title}
@@ -119,7 +119,7 @@ export default function MovieCardLarge({ movie }: MovieCardLargeProps) {
                 <section className={styles.quote}>
                     <QuotationIcon className={styles.quoteIcon}/>
                         {quote.quote}
-                    <QuotationIconInverted />
+                    <QuotationIconInverted className={styles.quoteIcon} />
                 </section>
                 <p className={styles.author}>- {quote.character}</p>
                              

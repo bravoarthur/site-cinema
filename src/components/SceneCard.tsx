@@ -9,22 +9,22 @@ interface SceneCardProps {
 
 export default function SceneCard({ scene }: SceneCardProps) {
   return (
-    <Link href={`/movies/${scene.movie_id}`}>
+    <Link className={styles.linkScene} href={`/movies/${scene.movie_id}`}>
       <div className={styles.card}>
         <div className={styles.imageBox}>
             <Image
                 src={scene.image_url}
                 alt={scene.explanation}
-                width={300}
-                height={400}
+                width={600}
+                height={380}
                 className={styles.image}
             />
+        </div>
+        <div className={styles.descriptionBox}>
             <p className={styles.characterMovie}>  
                {scene.character} - {scene.movie_title}
             </p>
-        </div>
-        <div className={styles.descriptionBox}>
-            <p>{scene.explanation}</p>
+            <p className={styles.sceneExplanation}>{scene.explanation}</p>
         </div>
       </div>
     </Link>

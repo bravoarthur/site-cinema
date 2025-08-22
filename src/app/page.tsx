@@ -59,10 +59,10 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <h1>Bem-vindo ao site que seleciona apenas filmes que prestam</h1>
+      <h1 className={styles.titleH1}>Bem-vindo ao site que seleciona apenas filmes que prestam</h1>
 
-      <section>
-        <h2>Filme da Semana</h2>
+      <section className={styles.sectionBox}>
+        <h2 className={styles.titleH2}>Filme da Semana</h2>
         {featuredMovie ? (
           <MovieCardLarge movie={featuredMovie} />
         ) : (
@@ -70,8 +70,8 @@ export default async function Home() {
         )}
       </section>
 
-      <section className={styles.carouselSection}>
-        <h2>Nossas Melhores Notas</h2>
+      <section className={styles.sectionBox}>
+        <h2 className={styles.titleH2}>Nossas Melhores Notas</h2>
         {topRated.length > 0 ? (
           <Carousel items={topRated} type="movie" />
         ) : (
@@ -79,8 +79,8 @@ export default async function Home() {
         )}
       </section>
 
-      <section>
-        <h2>Conheça Esses Filmes</h2>
+      <section className={styles.sectionBox}>
+        <h2 className={styles.titleH2}>Conheça Esses Filmes</h2>
         {hiddenGems.length > 0 ? (
           <Carousel items={hiddenGems} type="movie" />
         ) : (
@@ -88,8 +88,8 @@ export default async function Home() {
         )}
       </section>
 
-      <section>
-        <h2>Artigos sobre Cinema</h2>
+      <section className={styles.sectionBox}>
+        <h2 className={styles.titleH2}>Artigos sobre Cinema</h2>
         {articles.length > 0 ? (
           <Carousel items={articles} type="article" />
         ) : (
@@ -97,8 +97,8 @@ export default async function Home() {
         )}
       </section>
 
-      <section>
-        <h2>Preferidos de Vocês</h2>
+      <section className={styles.sectionBox}>
+        <h2 className={styles.titleH2}>Preferidos de Vocês</h2>
         {userFavorites.length > 0 ? (
           <Carousel items={userFavorites} type="movie" />
         ) : (

@@ -1,21 +1,22 @@
-.main { 
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    padding: 2rem;
-    margin-left: 200px;
-    margin-right: 200px;
-    img {
-      max-width: 100%;
-      height: auto;      
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
+.main {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 2rem;
+  margin-left: 200px;
+  margin-right: 200px;
 
-  p {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .criticaTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .criticaText {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
@@ -27,39 +28,221 @@
       font-size: 1.8rem;
       margin-bottom: 1rem;
     }
+
     .movieImageBox {
       display: flex;
       margin: 2.5rem 0;
-      width: 100%;
-      justify-content: center;        
-    
+      width: 85%;
+      justify-content: center;
     }
   }
 
   .quotesScenesBox {
     margin-bottom: 3rem;
+    width: 100%;
+    justify-items: center;
+
     h2 {
-        text-align: center;
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
     }
-    
+
     .cards {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
-      img {
-        max-width: 100%;
-        height: auto;
-        margin: 0 1rem;
-        margin-bottom: 0.5rem;
+      gap: 2.5rem;
+      width: 50%;
+      align-self: center;
+      align-items: center;
+    }
+  }
+  .commentsBox {
+    display: flex;
+    width: 100%;
+  }
+}
+
+
+/* Breakpoint para telas menores que 1600px */
+@media (max-width: 1600px) {
+  .main {
+    margin-left: 120px;
+    margin-right: 120px;
+    padding: 1.5rem;
+
+    .criticaTitle {
+      font-size: 2.2rem;
+      margin-bottom: 0.9rem;
+    }
+  
+    .criticaText {
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+    }
+  
+    .criticaBox {
+      margin-bottom: 1.8rem;
+  
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.9rem;
+      }
+  
+      .movieImageBox {
+        margin: 2rem 0;
+      }
+    }
+  
+    .quotesScenesBox {
+  
+      margin-bottom: 2.5rem;
+  
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+      }
+  
+      .cards {
+        gap: 2.2rem;
+        width: 53%;
       }
     }
   }
-
 }
 
-.commentsBox{
-    display: flex;
-    width: 100%;
+/* Breakpoint para telas menores que 1300px */
+@media (max-width: 1300px) {
+  .main {
+    margin-left: 55px;
+    margin-right: 55px;
+    padding: 1.2rem;
+
+    .criticaTitle {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+  
+    .criticaText {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+  
+    .criticaBox {
+      margin-bottom: 1.5rem;
+  
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+      }
+  
+      .movieImageBox {
+        margin: 1.5rem 0;
+      }
+    }
+  
+    .quotesScenesBox {
+      margin-bottom: 2rem;
+  
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+  
+      }  
+      .cards {
+        gap: 2rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Breakpoint para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+  .main {
+    margin-left: 35px;
+    margin-right: 35px;
+    padding: 1rem;
+  }
+
+  .criticaTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .criticaText {
+    font-size: 0.85rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .criticaBox {
+    margin-bottom: 1.2rem;
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .movieImageBox {
+      margin: 1.2rem 0;
+    }
+  }
+
+  .quotesScenesBox {
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .cards {
+      gap: 0.8rem;
+    }
+  }
+}
+
+/* Breakpoint para telas menores que 480px (móveis pequenos) */
+@media (max-width: 480px) {
+  .main {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 0.8rem;
+  }
+
+  .criticaTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .criticaText {
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .criticaBox {
+    margin-bottom: 1rem;
+
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .movieImageBox {
+      margin: 1rem 0;
+    }
+  }
+
+  .quotesScenesBox {
+    margin-bottom: 1.2rem;
+
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .cards {
+      gap: 0.6rem;
+    }
+  }
 }

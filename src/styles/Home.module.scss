@@ -3,19 +3,116 @@
   margin-left: 200px;
   padding: 2rem;
 
-  h1 {
+  .titleH1 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 4rem;
     margin-top: 4rem;
   }
 
-  h2 {
+  .titleH2 {
     font-size: 1.8rem;
     margin: 1.5rem 0;
   }
 
-  section {
+  .sectionBox {
     margin-bottom: 3rem;
+  }
+}
+
+/* Breakpoint para telas menores que 1600px */
+@media (max-width: 1600px) {
+  .main {
+    margin-right: 130px;
+    margin-left: 130px;
+    padding: 1.5rem;
+
+    .titleH1 {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      margin-top: 3rem;
+    }
+  
+    .titleH2 {
+      font-size: 1.6rem;
+      margin: 1.2rem 0;
+    }
+    
+    .sectionBox {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+}
+
+/* Breakpoint para telas menores que 1300px */
+@media (max-width: 1300px) {
+  .main {
+    margin-right: 100px;
+    margin-left: 100px;
+    padding: 1.2rem;
+
+    .titleH1 {
+      font-size: 2.1rem;
+      margin-bottom: 2.5rem;
+      margin-top: 2.5rem;
+    }
+  
+    .titleH2 {
+      font-size: 1.7rem;
+      margin: 1rem 0;
+    }
+    .sectionBox {
+      margin-bottom: 4rem;
+    }
+
+  }
+}
+
+/* Breakpoint para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+  .main {
+    margin-right: 35px;
+    margin-left: 35px;
+    padding: 1rem;
+
+    .titleH1 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  
+    .titleH2 {
+      font-size: 1.4rem;
+      margin: 0.8rem 0;
+    }
+    
+    .sectionBox {
+      margin-bottom: 4rem;
+    }
+  }
+
+
+}
+
+/* Breakpoint para telas menores que 480px (móveis pequenos) */
+@media (max-width: 480px) {
+  .main {
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 0.8rem;
+    .titleH1 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+    }
+  
+    .titleH2 {
+      font-size: 1.2rem;
+      margin: 0.6rem 0;
+    }
+    .sectionBox {
+      margin-bottom: 4rem;
+    }
   }
 }

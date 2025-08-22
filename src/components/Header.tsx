@@ -4,11 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { supabase } from '../lib/supabase';
 import styles from '../styles/Header.module.scss';
-import { User } from '@supabase/supabase-js'; // Importar tipo User
+import { User } from '@supabase/supabase-js';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [user, setUser] = useState<User | null>(null); // Alterar any para User | null
+  const [user, setUser] = useState<User | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>(''); // Estado para o termo de busca
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -25,6 +26,20 @@ export default function Header() {
       authListener.subscription.unsubscribe();
     };
   }, []);
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      window.location.href = `/search?query=${encodeURIComponent(searchQuery.trim())}`;
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      handleSearch();
+    }
+  };
+
+  const showLogin = process.env.NODE_ENV === 'development' || window.location.pathname.includes('/admin')
 
   return (
     <header className={styles.header}>
@@ -45,21 +60,30 @@ export default function Header() {
           <Link href="/categories">Categorias</Link>
           <Link href="/quotes">Frases</Link>
           <Link href="/scenes">Cenas</Link>
-          <Link href="/search">
-            <Image
-              src="/images/search-icon.png"
-              alt="Buscar"
-              width={84}
-              height={34}
-              className={styles.searchIcon}
+          <div className={styles.searchContainer}>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Buscar filmes..."
+              className={styles.searchInput}
             />
-          </Link>
-          {user ? (
+            <button onClick={handleSearch} className={styles.searchButton}>
+              <Image
+                src="/images/search-icon.png" // Substitua por um ícone de lupa bonito (ex.: "magnifying-glass.png")
+                alt="Buscar"
+                width={25}
+                height={25}
+              />
+            </button>
+          </div>
+        {user ? (
             <>
               <Link href="/admin">Admin</Link>
               <Link href="/logout">Sair</Link>
             </>
-          ) : (
+          ) : showLogin && (
             <Link href="/login">Login</Link>
           )}
         </nav>

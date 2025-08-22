@@ -16,6 +16,7 @@
 
 .logo {
   width: 250px;
+  height: 130px;
   margin-left: 8rem;
 }
 
@@ -35,9 +36,50 @@
   }
 }
 
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 0.65rem;
+  border: 3px solid #c4c4c8;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+  outline: none;
+  width: 150px;
+  background-color: #d3d8dd;
+  transition: width 0.3s ease;
+
+  &:focus {
+    width: 200px;
+    border-color: #318ef9;
+  }
+}
+
+.searchButton {
+  padding: 0.5rem;
+  border: 1px solid #c4c4c8;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #242428;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #3a3a3e;
+  }
+
+  img {
+    filter: brightness(0) invert(1); /* Ícone branco na lupa */
+  }
+}
+
 .searchIcon {
   width: 24px;
-  
 }
 
 .hamburger {
@@ -48,7 +90,109 @@
   font-size: 1.5rem;
 }
 
+/* Breakpoint para telas menores que 1600px */
+@media (max-width: 1600px) {
+  .header {
+    padding: 1rem 0;
+  }
+
+  .container {
+    padding-right: 50px;
+  }
+
+  .logo {
+    width: 220px;
+    height: 114px;
+    margin-left: 6rem;
+  }
+
+  .nav {
+    gap: 1.2rem;
+
+    a {
+      font-size: 1rem;
+    }
+  }
+
+  .searchInput {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    width: 130px;
+
+    &:focus {
+      width: 180px;
+    }
+  }
+
+  .searchButton {
+    padding: 0.45rem;
+  }
+
+  .searchIcon {
+    width: 22px;
+  }
+}
+
+/* Breakpoint para telas menores que 1300px */
+@media (max-width: 1300px) {
+  .header {
+    padding: 0.8rem 0;
+  }
+
+  .container {
+    padding-right: 40px;
+  }
+
+  .logo {
+    width: 180px;
+    height: 94px;
+    margin-left: 4rem;
+  }
+
+  .nav {
+    gap: 1rem;
+
+    a {
+      font-size: 0.9rem;
+    }
+  }
+
+  .searchInput {
+    padding: 0.55rem;
+    font-size: 0.85rem;
+    width: 110px;
+
+    &:focus {
+      width: 160px;
+    }
+  }
+
+  .searchButton {
+    padding: 0.4rem;
+  }
+
+  .searchIcon {
+    width: 20px;
+  }
+}
+
+/* Breakpoint para telas menores que 768px (tablets) */
 @media (max-width: 768px) {
+  .header {
+    padding: 0.6rem 0;
+  }
+
+  .container {
+    padding-right: 20px;
+    flex-wrap: wrap; /* Permite que o conteúdo quebre se necessário */
+  }
+
+  .logo {
+    width: 150px;
+    height: 78px;
+    margin-left: 2rem;
+  }
+
   .nav {
     display: none;
     flex-direction: column;
@@ -62,9 +206,95 @@
     &.open {
       display: flex;
     }
+
+    a {
+      font-size: 0.85rem;
+      margin: 0.5rem 0;
+    }
+  }
+
+  .searchContainer {
+    width: 100%;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+
+  .searchInput {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    width: 100px;
+
+    &:focus {
+      width: 140px;
+    }
+  }
+
+  .searchButton {
+    padding: 0.35rem;
+  }
+
+  .searchIcon {
+    width: 18px;
   }
 
   .hamburger {
     display: block;
+  }
+}
+
+/* Breakpoint para telas menores que 480px (móveis pequenos) */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0;
+  }
+
+  .container {
+    padding-right: 10px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 62px;
+    margin-left: 1rem;
+  }
+
+  .nav {
+    top: 50px;
+    padding: 0.8rem;
+
+    &.open {
+      display: flex;
+    }
+
+    a {
+      font-size: 0.75rem;
+      margin: 0.4rem 0;
+    }
+  }
+
+  .searchContainer {
+    margin: 0.4rem 0;
+  }
+
+  .searchInput {
+    padding: 0.4rem;
+    font-size: 0.75rem;
+    width: 90px;
+
+    &:focus {
+      width: 120px;
+    }
+  }
+
+  .searchButton {
+    padding: 0.3rem;
+  }
+
+  .searchIcon {
+    width: 16px;
+  }
+
+  .hamburger {
+    font-size: 1.2rem;
   }
 }

@@ -51,7 +51,7 @@ export default function Quotes() {
 
   return (
     <main className={styles.main}>
-      <h1>Frases Icônicas de Filmes</h1>
+      <h1 className={styles.titleQuotePage}>Frases Icônicas de Filmes</h1>
       <div className={styles.filters}>
         {categories.length > 0 ? (
           <select

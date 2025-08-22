@@ -51,7 +51,7 @@ export default function Scenes() {
 
   return (
     <main className={styles.main}>
-      <h1>Cenas Icônicas de Filmes</h1>
+      <h1 className={styles.scenePageTitle}>Cenas Icônicas de Filmes</h1>
       <div className={styles.filters}>
         {categories.length > 0 ? (
           <select

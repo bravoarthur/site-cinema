@@ -7,7 +7,7 @@ export default async function Categories() {
 
   return (
     <main className={styles.main}>
-      <h1>Categorias</h1>
+      <h1 className={styles.categoryPageTitle}>Categorias</h1>
       <div className={styles.grid}>
         {categories?.map((category) => (
           <CategoryCard key={category.id} category={category} />

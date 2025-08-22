@@ -79,3 +79,44 @@
     
   }
 }
+
+
+
+@media (max-width: 1600px) {
+
+  .commentSection {
+    width: 60%;
+  }  
+}
+
+/* Breakpoint para telas menores que 1300px */
+@media (max-width: 1300px) {
+
+  .commentSection {
+    width: 70%;
+  }  
+}
+
+@media (max-width: 1024px) {
+
+  .commentSection {
+    width: 80%;
+  }  
+}
+
+/* Breakpoint para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+
+  .commentSection {
+    width: 90%;
+  }  
+}
+
+/* Breakpoint para telas menores que 480px (móveis pequenos) */
+@media (max-width: 480px) {
+
+  .commentSection {
+    width: 95%;
+  }  
+  
+}
